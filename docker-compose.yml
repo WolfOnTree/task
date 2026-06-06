@@ -1,0 +1,16 @@
+services:
+  studentsdb:
+    container_name: students_db
+    image: postgres:latest
+    volumes:
+      - /var/lib/postgresql
+    environment:
+      - POSTGRES_DB=students
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 55432:5432
+
+volumes:
+  chars_data:
+    name: students_data

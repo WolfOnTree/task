@@ -34,3 +34,5 @@ class ApiConfig(BaseSettings):
         return self
 
 settings = ApiConfig()
+
+print(settings.model_dump())
