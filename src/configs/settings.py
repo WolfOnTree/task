@@ -20,6 +20,11 @@ class ApiConfig(BaseSettings):
 
     db_dsl: URL | None = None
 
+    access_token_expire_minutes: int = 30
+    secret_key: str = "my_secret_key"
+    algorithm: str = "HS256"
+
+
     @model_validator(mode="after")
     def set_db_dsl(self):
         self.db_dsl = URL.create(

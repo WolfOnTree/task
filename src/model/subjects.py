@@ -4,6 +4,14 @@ from enum import Enum
 from sqlalchemy import Column, String, Boolean, Integer, Enum as SQLEnum
 from .base import Base, BaseModelMixin
 
+class User(Base, BaseModelMixin):
+
+    __tablename__ = "users"
+
+    name = Column(String, nullable=False)
+    email = Column(String, nullable=False, unique=True)
+    password = Column(String, nullable=False)
+
 class Faculty(Enum):
     AVTF = 'АВТФ'
     FPMI = 'ФПМИ'
